@@ -46,18 +46,22 @@ const steven = movies.filter(function(arr){
     
 });
 function stevenFilms(){
-  console.log(steven)
+  return steven
 }
 stevenFilms()
 
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(arr) {
-  return arr.year.sort()
-}
+const newArray = movies.map((arr) =>  arr)
+const sortYear = newArray.sort((a, b) => a.year - b.year)
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-function orderAlphabetically() {}
+const newArray = movies.map((arr) =>  arr)
+const sortTitle = newArray.sort((a, b)=> {
+  return a.title.toLowerCase().localeCompare(b.title.toLowerCase().localeCompare)
+});
+
+console.log(sortTitle)
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes() {}
