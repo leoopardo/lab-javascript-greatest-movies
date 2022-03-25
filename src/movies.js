@@ -1,5 +1,6 @@
 const movies = require("./data");
 
+
 // The `movies` array from the file `src/data.js`.
 console.log('movies: ', movies);
 
@@ -7,28 +8,53 @@ console.log('movies: ', movies);
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
 // How could you "clean" a bit this array and make it unified (without duplicates)?
-const howManyMovies = movies.map(function(dir){
+const allDirectors = movies.map(function(dir){
   return dir.director
 })
-console.log(howManyMovies)
+function getAllDirectors(){
+  console.log(allDirectors)
+}
+getAllDirectors(movies)
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 
 const steven = movies.filter(function(arr){
-  return arr.director === "Steven Spielberg"
+  return arr.director === "Steven Spielberg" 
     
-})
-return steven
-
+});
+function stevenFilms(){
+  console.log(steven)
+}
+stevenFilms()
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage() {}
+const allScores = movies.map(function(dir){
+  return dir.score
+})
+function scoresAverage(arr) {
+  let avarege = 0
+  for (let i = 0; i < arr.length; i++){
+    avarege += arr[i]
+  }
+  return avarege / arr.length
+}
+console.log(scoresAverage(allScores))
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore() {}
+const steven = movies.filter(function(arr){
+  return arr.director === "Steven Spielberg" 
+    
+});
+function stevenFilms(){
+  console.log(steven)
+}
+stevenFilms()
+
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear() {}
+function orderByYear(arr) {
+  return arr.year.sort()
+}
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically() {}
